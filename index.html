@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camp Pocatello: Defiance against Oblivion</title>
     <style>
-        /* 保持之前的风格 */
+        /* Global Styles */
         body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #f4f1ea; color: #333; margin: 0; padding: 0; line-height: 1.6; }
         header { background-color: #fff; padding: 20px; border-bottom: 1px solid #ddd; text-align: center; position: sticky; top: 0; z-index: 100; }
         h1 { font-family: "Georgia", serif; margin: 0; font-size: 1.5rem; color: #000; }
-        .subtitle { font-size: 0.9rem; color: #666; margin-top: 5px; }
+        .subtitle { font-size: 0.9rem; color: #666; margin-top: 5px; font-style: italic; }
+        
+        /* Container */
         .container { max-width: 800px; margin: 0 auto; padding: 20px; }
         hr.divider { border: 0; height: 1px; background: #ccc; margin: 40px 0; }
         
-        /* 图片通用样式 */
+        /* Images */
         .exhibit-image { width: 100%; height: auto; display: block; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 2px; }
 
-        /* Scene 模块样式 */
+        /* Scene Blocks */
         .scene-block { background: #fff; padding: 20px; margin-bottom: 40px; border: 1px solid #e0e0e0; }
         .scene-title { font-family: "Georgia", serif; font-size: 1.2rem; border-left: 4px solid #8b0000; padding-left: 10px; margin-bottom: 15px; color: #8b0000; }
         
-        .archive-link { display: block; background-color: #333; color: #fff; text-align: center; padding: 15px; text-decoration: none; margin-top: 50px; font-weight: bold; border-radius: 4px; }
-        footer { text-align: center; font-size: 0.8rem; color: #888; padding: 40px 20px; }
+        /* Archive Button */
+        .archive-link { display: block; background-color: #333; color: #fff; text-align: center; padding: 15px; text-decoration: none; margin-top: 30px; font-weight: bold; border-radius: 4px; transition: background 0.3s; }
+        .archive-link:hover { background-color: #555; }
+
+        /* Footer */
+        footer { text-align: center; font-size: 0.8rem; color: #888; padding: 40px 20px; border-top: 1px solid #ddd; margin-top: 40px;}
     </style>
 </head>
 <body>
@@ -43,61 +49,63 @@
 
         <hr class="divider">
 
-        <div style="text-align: center;">
-            <p>Access the complete digitized collection of 200+ original documents.</p>
-            <p>访问包含200余份原始档案的完整数据库。</p>
-            <a href="archive.html" class="archive-link">ENTER ARCHIVE / 进入档案库</a>
+        <div style="text-align: center; background: #fff; padding: 30px; border: 1px solid #e0e0e0;">
+            <p style="font-weight: bold; margin-bottom: 5px;">Access the complete digitized collection of 200+ original documents.</p>
+            <p style="font-style: italic; color: #555; margin-top: 0;">Zugang zur vollständigen digitalisierten Sammlung von über 200 Originaldokumenten.</p>
+            
+            <a href="archive.html" class="archive-link">ENTER ARCHIVE / ZUM ARCHIV</a>
         </div>
 
     </div>
 
     <footer>
         <p>&copy; 2026 Camp Pocatello Project.</p>
+        <p>In cooperation with TRACES Center for History and Culture.</p>
     </footer>
 
     <script>
-        // === 魔法代码：自动生成图片并处理 jpg/png 后缀问题 ===
+        // === IMAGE LOADER SCRIPT ===
 
-        // 1. 生成 Introduction (intro-1 到 intro-6)
+        // 1. Generate Introduction (intro-1 to intro-6)
         const introContainer = document.getElementById('intro-section');
         for (let i = 1; i <= 6; i++) {
             let img = document.createElement('img');
             img.className = 'exhibit-image';
             img.alt = `Introduction Panel ${i}`;
-            // 默认尝试 .jpg，如果失败(onerror)则自动切换为 .png
+            
+            // Try .jpg first, fallback to .png
             img.src = `intro-${i}.jpg`;
             img.onerror = function() { 
-                this.onerror = null; // 防止死循环
+                this.onerror = null; 
                 this.src = `intro-${i}.png`; 
             };
             introContainer.appendChild(img);
         }
 
-        // 2. 生成 Scenes (6组，每组3张，共18张: scene-1 到 scene-18)
+        // 2. Generate Scenes (scene-1 to scene-18)
         const sceneContainer = document.getElementById('scene-section');
-        let imageCounter = 1; // 从 scene-1 开始计数
+        let imageCounter = 1;
 
         for (let group = 1; group <= 6; group++) {
-            // 创建一个场景框
+            // Create Scene Container
             let sceneDiv = document.createElement('div');
             sceneDiv.className = 'scene-block';
             
-            // 添加标题
+            // Add Title (Bilingual)
             let titleDiv = document.createElement('div');
             titleDiv.className = 'scene-title';
-            titleDiv.innerText = `Scene 0${group}`; // 显示 Scene 01, Scene 02...
+            titleDiv.innerText = `Scene / Szene 0${group}`; 
             sceneDiv.appendChild(titleDiv);
 
-            // 在这一组里放3张图
+            // Add 3 images per scene
             for (let k = 0; k < 3; k++) {
                 let img = document.createElement('img');
                 img.className = 'exhibit-image';
                 img.alt = `Scene Image ${imageCounter}`;
                 
-                // 使用闭包保存当前的序号，防止变量污染
                 let currentNum = imageCounter;
                 
-                // 默认尝试 .jpg，失败切 .png
+                // Try .jpg first, fallback to .png
                 img.src = `scene-${currentNum}.jpg`;
                 img.onerror = function() { 
                     this.onerror = null; 
@@ -105,9 +113,8 @@
                 };
 
                 sceneDiv.appendChild(img);
-                imageCounter++; // 序号加1，准备下一张
+                imageCounter++;
             }
-
             sceneContainer.appendChild(sceneDiv);
         }
     </script>

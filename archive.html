@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archive Gallery</title>
+    <title>Archive / Archiv</title>
     <style>
-        body { font-family: sans-serif; background: #333; color: #fff; margin: 0; }
-        header { padding: 20px; background: #000; text-align: center; position: sticky; top: 0; z-index: 100;}
+        body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #333; color: #fff; margin: 0; }
+        header { padding: 20px; background: #000; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #444; }
+        
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 10px;
-            padding: 10px;
+            padding: 15px;
         }
         .gallery img {
             width: 100%;
@@ -20,34 +21,66 @@
             cursor: pointer;
             border: 1px solid #555;
             background: #222;
+            transition: transform 0.2s;
         }
-        .back-btn { color: #fff; text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 10px;}
+        .gallery img:hover { transform: scale(1.05); border-color: #fff; }
+        
+        /* Bilingual Text Styles */
+        h2 { margin: 5px 0; font-family: "Georgia", serif; letter-spacing: 1px; }
+        p { color: #aaa; font-size: 0.8rem; margin: 0; }
+        
+        .back-btn { 
+            color: #fff; 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            display: inline-block; 
+            margin-bottom: 10px;
+            border: 1px solid #555;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .back-btn:hover { background: #333; }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html" class="back-btn">← Back to Exhibition</a>
-        <h2 style="margin:0;">Archive Documents</h2>
-        <p style="font-size: 0.8rem; color: #aaa;">200+ Original Scans</p>
+        <a href="index.html" class="back-btn">← Back to Exhibition / Zurück zur Ausstellung</a>
+        <h2>ARCHIVE / ARCHIV</h2>
+        <p>200+ Original Documents / Originaldokumente</p>
     </header>
     
-    <div class="gallery" id="gallery-container"></div>
+    <div class="gallery" id="gallery-container">
+        </div>
 
     <script>
         const container = document.getElementById('gallery-container');
-        const totalImages = 200; // 档案图片的数量
+        const totalImages = 200; // Total count of documents
         
         for (let i = 1; i <= totalImages; i++) {
             const img = document.createElement('img');
-            // 这里固定为 .jpg，因为你确认是扫描件
+            img.alt = `Document ${i}`;
+            img.loading = "lazy"; // Important for performance
+            
+            // === SMART LOADER: Try .jpg -> .png -> .jpeg ===
+            
+            // 1. First try: standard .jpg
             img.src = `doc-${i}.jpg`; 
-            img.loading = "lazy"; 
             
-            // 点击查看原图
+            // 2. If .jpg fails, try .png
+            img.onerror = function() {
+                this.onerror = function() {
+                    // 3. If .png also fails, try .jpeg (common for scanners)
+                    this.onerror = function() {
+                        // If everything fails, hide the image
+                        this.style.display = 'none';
+                    };
+                    this.src = `doc-${i}.jpeg`;
+                };
+                this.src = `doc-${i}.png`;
+            };
+
+            // Click to view full size
             img.onclick = function() { window.open(this.src, '_blank'); };
-            
-            // 如果某张图不存在，自动隐藏
-            img.onerror = function() { this.style.display = 'none'; };
             
             container.appendChild(img);
         }
