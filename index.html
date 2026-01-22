@@ -1,169 +1,153 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp Pocatello: Defiance against Oblivion</title>
+    <style>
+        /* 全局风格设定 - 模仿 Traces.org 的学术/档案风 */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f4f1ea; /* 模仿旧纸张的米色背景 */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: #fff;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        h1 {
+            font-family: "Georgia", serif; /* 标题用衬线体，更有历史感 */
+            margin: 0;
+            font-size: 1.5rem;
+            color: #000;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* 内容容器 */
+        .container {
+            max-width: 800px; /* 限制最大宽度，阅读更舒适 */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 章节分割线 */
+        hr.divider {
+            border: 0;
+            height: 1px;
+            background: #ccc;
+            margin: 40px 0;
+        }
+
+        /* 图片样式 */
+        .exhibit-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 给图片加一点阴影，像贴在墙上 */
+            border-radius: 2px;
+        }
+
+        /* Scene 模块样式 */
+        .scene-block {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 40px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .scene-title {
+            font-family: "Georgia", serif;
+            font-size: 1.2rem;
+            border-left: 4px solid #8b0000; /* 深红色强调线 */
+            padding-left: 10px;
+            margin-bottom: 15px;
+            color: #8b0000;
+        }
+
+        /* 档案库按钮 */
+        .archive-link {
+            display: block;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            margin-top: 50px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .archive-link:hover {
+            background-color: #555;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            padding: 40px 20px;
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Camp Pocatello: Defiance against Oblivion&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 全局风格设定 - 模仿 Traces.org 的学术/档案风 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f4f1ea; /* 模仿旧纸张的米色背景 */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 顶部导航 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #ddd;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: sticky;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 100;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: "Georgia", serif; /* 标题用衬线体，更有历史感 */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #000;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.subtitle {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #666;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 内容容器 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px; /* 限制最大宽度，阅读更舒适 */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 章节分割线 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>hr.divider {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 1px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #ccc;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 40px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 图片样式 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.exhibit-image {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 给图片加一点阴影，像贴在墙上 */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Scene 模块样式 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.scene-block {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #e0e0e0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.scene-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: "Georgia", serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-left: 4px solid #8b0000; /* 深红色强调线 */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #8b0000;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 档案库按钮 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.archive-link {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #333;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 50px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.archive-link:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #555;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 页脚 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #888;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;CAMP POCATELLO&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="subtitle"&gt;Defiance against Oblivion / Widerstand gegen das Vergessen&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="intro-1.jpg" class="exhibit-image" alt="Introduction Panel 1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="intro-2.jpg" class="exhibit-image" alt="Introduction Panel 2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="intro-3.jpg" class="exhibit-image" alt="Introduction Panel 3"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="intro-4.jpg" class="exhibit-image" alt="Introduction Panel 4"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;hr class="divider"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scene-block"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="scene-title"&gt;Scene 01: The Hostile Land&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="scene-1.jpg" class="exhibit-image" alt="Scene 1 Visual"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="text-1.jpg" class="exhibit-image" alt="Scene 1 Text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scene-block"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="scene-title"&gt;Scene 02&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="scene-2.jpg" class="exhibit-image" alt="Scene 2 Visual"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="text-2.jpg" class="exhibit-image" alt="Scene 2 Text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;hr class="divider"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="text-align: center;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Access the complete digitized collection of 200+ original documents.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;访问包含200余份原始档案的完整数据库。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="archive.html" class="archive-link"&gt;ENTER ARCHIVE / 进入档案库&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&amp;copy; 2026 Camp Pocatello Project.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;In cooperation with TRACES Center for History and Culture.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <header>
+        <h1>CAMP POCATELLO</h1>
+        <div class="subtitle">Defiance against Oblivion / Widerstand gegen das Vergessen</div>
+    </header>
+
+    <div class="container">
+        
+        <img src="intro-1.jpg" class="exhibit-image" alt="Introduction Panel 1">
+        <img src="intro-2.jpg" class="exhibit-image" alt="Introduction Panel 2">
+        <img src="intro-3.jpg" class="exhibit-image" alt="Introduction Panel 3">
+        <img src="intro-4.jpg" class="exhibit-image" alt="Introduction Panel 4">
+
+        <hr class="divider">
+
+        <div class="scene-block">
+            <div class="scene-title">Scene 01: The Hostile Land</div>
+            <img src="scene-1.jpg" class="exhibit-image" alt="Scene 1 Visual">
+            <img src="text-1.jpg" class="exhibit-image" alt="Scene 1 Text">
+        </div>
+
+        <div class="scene-block">
+            <div class="scene-title">Scene 02</div>
+            <img src="scene-2.jpg" class="exhibit-image" alt="Scene 2 Visual">
+            <img src="text-2.jpg" class="exhibit-image" alt="Scene 2 Text">
+        </div>
+
+        <hr class="divider">
+
+        <div style="text-align: center;">
+            <p>Access the complete digitized collection of 200+ original documents.</p>
+            <p>访问包含200余份原始档案的完整数据库。</p>
+            <a href="archive.html" class="archive-link">ENTER ARCHIVE / 进入档案库</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Camp Pocatello Project.</p>
+        <p>In cooperation with TRACES Center for History and Culture.</p>
+    </footer>
+
 </body>
 </html>
