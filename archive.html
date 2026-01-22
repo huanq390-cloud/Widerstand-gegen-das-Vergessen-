@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Archive Gallery&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: sans-serif; background: #333; color: #fff; margin: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header { padding: 20px; background: #000; text-align: center; position: sticky; top: 0; z-index: 100;}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gallery {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gallery img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 150px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #555;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #222; /* 图片加载前的占位色 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gallery img:hover { opacity: 0.8; transform: scale(1.02); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.back-btn { color: #fff; text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 10px;}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 简单的加载动画 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.loading { text-align: center; padding: 20px; color: #888; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="index.html" class="back-btn"&gt;← Back to Exhibition / 返回展览&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 style="margin:0;"&gt;Archive Documents&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="font-size: 0.8rem; color: #aaa;"&gt;Total Documents: 200+&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="gallery" id="gallery-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const container = document.getElementById('gallery-container');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const totalImages = 200; // 如果你的图片多于200，修改这个数字</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (let i = 1; i &lt;= totalImages; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const img = document.createElement('img');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 这里假设你的图片是 jpg 格式。如果是 png，请把下面的 .jpg 改为 .png</p>
+<p class="p1"><span class="Apple-converted-space">            </span>img.src = `doc-${i}.jpg`;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>img.alt = `Document ${i}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>img.loading = "lazy"; // 懒加载，极大提升手机浏览速度</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 如果某张图片不存在，自动隐藏，不会出现裂开的图标</p>
+<p class="p1"><span class="Apple-converted-space">            </span>img.onerror = function() { this.style.display = 'none'; };</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 点击查看大图（简单版）</p>
+<p class="p1"><span class="Apple-converted-space">            </span>img.onclick = function() { window.open(this.src, '_blank'); };</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.appendChild(img);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
