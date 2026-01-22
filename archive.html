@@ -7,7 +7,6 @@
     <style>
         body { font-family: sans-serif; background: #333; color: #fff; margin: 0; }
         header { padding: 20px; background: #000; text-align: center; position: sticky; top: 0; z-index: 100;}
-        
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -20,42 +19,35 @@
             object-fit: cover;
             cursor: pointer;
             border: 1px solid #555;
-            transition: 0.3s;
-            background: #222; /* 图片加载前的占位色 */
+            background: #222;
         }
-        .gallery img:hover { opacity: 0.8; transform: scale(1.02); }
         .back-btn { color: #fff; text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 10px;}
-        
-        /* 简单的加载动画 */
-        .loading { text-align: center; padding: 20px; color: #888; }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html" class="back-btn">← Back to Exhibition / 返回展览</a>
+        <a href="index.html" class="back-btn">← Back to Exhibition</a>
         <h2 style="margin:0;">Archive Documents</h2>
-        <p style="font-size: 0.8rem; color: #aaa;">Total Documents: 200+</p>
+        <p style="font-size: 0.8rem; color: #aaa;">200+ Original Scans</p>
     </header>
     
-    <div class="gallery" id="gallery-container">
-        </div>
+    <div class="gallery" id="gallery-container"></div>
 
     <script>
         const container = document.getElementById('gallery-container');
-        const totalImages = 200; // 如果你的图片多于200，修改这个数字
+        const totalImages = 200; // 档案图片的数量
         
         for (let i = 1; i <= totalImages; i++) {
             const img = document.createElement('img');
-            // 这里假设你的图片是 jpg 格式。如果是 png，请把下面的 .jpg 改为 .png
+            // 这里固定为 .jpg，因为你确认是扫描件
             img.src = `doc-${i}.jpg`; 
-            img.alt = `Document ${i}`;
-            img.loading = "lazy"; // 懒加载，极大提升手机浏览速度
+            img.loading = "lazy"; 
             
-            // 如果某张图片不存在，自动隐藏，不会出现裂开的图标
-            img.onerror = function() { this.style.display = 'none'; };
-            
-            // 点击查看大图（简单版）
+            // 点击查看原图
             img.onclick = function() { window.open(this.src, '_blank'); };
+            
+            // 如果某张图不存在，自动隐藏
+            img.onerror = function() { this.style.display = 'none'; };
             
             container.appendChild(img);
         }
